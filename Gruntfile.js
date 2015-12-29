@@ -20,7 +20,10 @@ module.exports = function(grunt) {
 
         // To Watch files to compile
         watch: {
-            //Watch Code here
+            sass: {
+                files: 'sass/*.sass',
+                tasks: 'sass:core'
+            }
         },
         
         //Sass Configuration
@@ -53,7 +56,7 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt, { scope: 'devDependencies' });    
     
     // CSS distribution task.
-    grunt.registerTask('sass-compile', ['clean:dist', 'sass:core', 'sass:core_min']);
+    grunt.registerTask('sass-compile', ['clean:dist', 'sass']);
     
     // Default task.
     grunt.registerTask('default', function () {
