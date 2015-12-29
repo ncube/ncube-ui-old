@@ -1,0 +1,25 @@
+{
+  "name": "ncube-ui",
+  "version": "0.1.0",
+  "description": "UI Elements for NCube",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ncube/ncube-ui.git"
+  },
+  "author": "Nutan Nara",
+  "license": "CC-BY-1.0",
+  "bugs": {
+    "url": "https://github.com/ncube/ncube-ui/issues"
+  },
+  "homepage": "https://github.com/ncube/ncube-ui#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-contrib-sass": "^0.9.2",
+    "load-grunt-tasks": "^3.4.0"
+  }
+}
