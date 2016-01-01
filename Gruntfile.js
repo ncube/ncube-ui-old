@@ -1,4 +1,12 @@
+/*!
+ * NCube's Gruntfile
+ * http://ncubeschool.org/ncube-ui
+ * Copyright 2015-2016 NCube.
+ * Licensed under CC BY-SA 4.0 (https://github.com/ncube/ncube-ui/blob/master/LICENSE)
+ */
+
 module.exports = function(grunt) {
+    'use strict';
     
     // Project configuration.
     grunt.initConfig({
@@ -21,8 +29,8 @@ module.exports = function(grunt) {
         // To Watch files to compile
         watch: {
             sass: {
-                files: 'sass/*.sass',
-                tasks: 'sass:core'
+                files: ['sass/*.sass', 'sass/mixins/*.sass'],
+                tasks: 'sass'
             }
         },
         
@@ -31,8 +39,7 @@ module.exports = function(grunt) {
             core: { 
                 options: { 
                     style: 'expanded',
-                    sourcemap: 'none',
-                    trace: true,
+                    sourcemap: 'none',                    
                     unixNewlines: true
                 },
                 files: { 
@@ -43,7 +50,6 @@ module.exports = function(grunt) {
                 options: { 
                     style: 'compressed',
                     sourcemap: 'file',
-                    trace: true,
                     unixNewlines: true
                 },
                 files: { 
