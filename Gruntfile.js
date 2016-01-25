@@ -34,6 +34,14 @@ module.exports = function(grunt) {
             }
         },
         
+        copy: {
+            fonts: {
+                expand: true,
+                src: 'fonts/*',
+                dest: 'dist/'
+            }
+        },
+        
         //Sass Configuration
         sass: { 
             core: { 
@@ -65,8 +73,5 @@ module.exports = function(grunt) {
     grunt.registerTask('sass-compile', ['clean:dist', 'sass']);
     
     // Default task.
-    grunt.registerTask('default', function () {
-        console.log('Default Task not yet Initialized');
-    });
-    
+    grunt.registerTask('default', ['sass-compile','copy']);
 };

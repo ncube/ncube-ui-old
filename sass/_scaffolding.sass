@@ -33,6 +33,17 @@ textarea
   font-family: inherit
   font-size: inherit
   line-height: inherit
+  
+// Links
+
+a
+  color: $link-color
+  text-decoration: none
+
+  &:hover,
+  &:focus
+    background-color: $link-hover-bgcolor
+    color: $link-hover-color
 
 // Figures
 //
@@ -41,6 +52,15 @@ textarea
 
 figure
   margin: 0
+  
+// Images
+
+img
+  vertical-align: middle
+  
+// Perfect circle
+.circle
+  border-radius: 50% // set radius in percents
 
 // Only display content to screen readers
 //
