@@ -1,0 +1,148 @@
+/// Grid system
+//
+// Generate semantic grid columns with these mixins.
+
+=make-container($gutter: $grid-gutter-width)
+  margin-left: auto
+  margin-right: auto
+  padding-left: $gutter / 2
+  padding-right: $gutter / 2
+
+  @if not $enable-flex
+    +clearfix
+
+=make-container-hr($gutter: $grid-gutter-width)
+  float: left
+  height: 100%
+  margin: 0 auto
+  min-height: 100% !important
+  min-width: 100%
+  overflow-y: hidden
+      
+  margin-left: auto
+  margin-right: auto
+  padding-left: $gutter / 2
+  padding-right: $gutter / 2
+  
+//   white-space: nowrap
+//   overflow-y: hidden
+
+//   @if not $enable-flex
+//     +clearfix
+
+// For each breakpoint, define the maximum width of the container in a media query
+=make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints)
+  @each $breakpoint, $container-max-width in $max-widths
+    +media-breakpoint-up($breakpoint, $breakpoints)
+      max-width: $container-max-width
+
+=make-row($gutter: $grid-gutter-width)
+  @if $enable-flex
+    display: flex
+    flex-wrap: wrap
+  @else
+    +clearfix
+
+  margin-left: $gutter / -2
+  margin-right: $gutter / -2
+
+=make-col($gutter: $grid-gutter-width)
+  position: relative
+
+  @if not $enable-flex
+    float: left
+
+  min-height: 1px
+  padding-left: $gutter / 2
+  padding-right: $gutter / 2
+
+=make-col-span($size, $columns: $grid-columns)
+  @if $enable-flex
+    flex: 0 0 percentage($size / $columns)
+
+    // Add a `max-width` to ensure content within each column does not blow out
+    // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
+    // do not appear to require this.
+    max-width: percentage($size / $columns)
+  @else
+    width: percentage($size / $columns)
+
+=make-col-offset($size, $columns: $grid-columns)
+  margin-left: percentage($size / $columns)
+
+=make-col-push($size, $columns: $grid-columns)
+  left: if($size > 0, percentage($size / $columns), auto)
+
+=make-col-pull($size, $columns: $grid-columns)
+  right: if($size > 0, percentage($size / $columns), auto)
+
+=make-col-modifier($type, $size, $columns)
+  // Work around the lack of dynamic mixin @include support (https://github.com/sass/sass/issues/626)
+  @if $type == push
+    +make-col-push($size, $columns)
+  @else if $type == pull
+    +make-col-pull($size, $columns)
+  @else if $type == offset
+    +make-col-offset($size, $columns)
+    
+    
+//    For Horizontal 
+    
+//   Todo: build horizontal grid system using flexbox  
+=make-column($gutter: $grid-gutter-width)
+  -webkit-column-width: 500px
+  -moz-column-width: 500px
+  column-width: 500px        
+  -webkit-column-gap: 0px /* Chrome, Safari, Opera */
+  -moz-column-gap: 0px /* Firefox */
+  column-gap: 0px
+  min-width: 100%
+  height: 100%
+  padding: $gutter
+//   height: 100%
+//   overflow: hidden
+//   overflow-x: auto
+//   display: inline-block
+//   display: -webkit-box
+//   display: -moz-box
+//   display: -ms-flexbox
+//   display: -webkit-flex
+//   display: flex
+
+//   -webkit-box-direction: normal
+//   -moz-box-direction: normal
+
+//   -webkit-box-orient: vertical
+//   -moz-box-orient: vertical
+
+//   -webkit-flex-direction: column
+//   -ms-flex-direction: column
+//   flex-direction: column
+
+//   -webkit-flex-wrap: wrap
+//   -ms-flex-wrap: wrap
+//   flex-wrap: wrap
+
+//   -webkit-box-pack: start
+//   -moz-box-pack: start
+
+//   -webkit-justify-content: flex-start
+//   -ms-flex-pack: start
+//   justify-content: flex-start
+//   -webkit-align-content: flex-start
+//   -ms-flex-line-pack: start
+//   align-content: flex-start
+//   -webkit-box-align: start
+//   -moz-box-align: start
+//   -webkit-align-items: flex-start
+//   -ms-flex-align: start
+//   align-items: flex-start
+//   +clearfix
+    
+    
+    
+    
+// For Horizontal Grid
+    
+=make-row-span($size, $columns: $grid-columns)
+  height: percentage($size / $columns)

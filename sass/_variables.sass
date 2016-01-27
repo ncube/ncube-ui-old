@@ -62,6 +62,19 @@ $color-warning:         $orange
 $color-danger:          $bloodOrange
 
 
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-flex: false !default
+$enable-rounded: true !default
+$enable-shadows: false !default
+$enable-gradients: false !default
+$enable-transitions: false !default
+$enable-hover-media-query: false !default
+$enable-grid-classes: true !default
+
+
 //======== Scaffolding ========
 //=============================
 //Settings for some of the most global styles.
@@ -192,20 +205,25 @@ $screen-sm-max:              ($screen-md-min - 1)
 $screen-md-max:              ($screen-lg-min - 1)
 
 
-//== Grid system
+// Grid breakpoints
 //
-//## Define your custom responsive grid.
+// Define the minimum and maximum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
 
-//** Number of columns in the grid.
-$grid-columns:              12
-//** Padding between columns. Gets divided in half for the left and right.
-$grid-gutter-width:         30px
-// Navbar collapse
-//** Point at which the navbar becomes uncollapsed.
-$grid-float-breakpoint:     $screen-sm-min
-//** Point at which the navbar begins collapsing.
-$grid-float-breakpoint-max: ($grid-float-breakpoint - 1)
+$grid-breakpoints: (xs: 0, sm: 544px, md: 768px, lg: 992px, xl: 1200px) !default
 
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (sm: 576px, md: 720px, lg: 940px, xl: 1140px) !default
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns: 12 !default
+$grid-gutter-width: 1.875rem !default
 
 
 //== Form states and alerts
@@ -393,11 +411,7 @@ $blockquote-font-size:        ($font-size-base * 1.25)
 $blockquote-border-color:     $gray-lighter
 //** Page header border color
 $page-header-border-color:    $gray-lighter
-//** Width of horizontal description list titles
-$dl-horizontal-offset:        $component-offset-horizontal
-//** Point at which .dl-horizontal becomes horizontal
-$dl-horizontal-breakpoint:    $grid-float-breakpoint
-//** Horizontal line color.
+
 $hr-border:                   $gray-lighter
 
 //======== Layout ========
