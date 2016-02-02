@@ -32,13 +32,6 @@
   .row
     +make-row
 
-// Horizontal Column
-//
-
-@if $enable-grid-classes
-  .column
-    +make-column
-
 // Columns
 //
 // Common styles for small and large grid columns
@@ -94,3 +87,14 @@
 
       .col-#{$breakpoint}-bottom
         align-self: flex-end
+        
+        
+// For Horizontal Layout
+
+// Horizonal Wrapper
+@if $enable-grid-classes
+  .wrapper
+    +make-wrapper
+   
+  .column
+    margin-bottom: 100%
