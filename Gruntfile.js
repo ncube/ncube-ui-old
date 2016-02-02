@@ -8,6 +8,9 @@
 module.exports = function(grunt) {
     'use strict';
     
+    var autoprefixerSettings = require('./grunt/autoprefixer-settings.js');
+    var autoprefixer = require('autoprefixer')(autoprefixerSettings);
+    
     // Project configuration.
     grunt.initConfig({
 
@@ -30,7 +33,7 @@ module.exports = function(grunt) {
         watch: {
             sass: {
                 files: ['sass/*.sass', 'sass/mixins/*.sass'],
-                tasks: 'sass'
+                tasks: ['sass', 'postcss:core']
             }
         },
         
@@ -40,6 +43,19 @@ module.exports = function(grunt) {
                 src: 'fonts/*',
                 dest: 'dist/'
             }
+        },
+        
+        //Post Css & Autoprefixer
+        postcss: {
+            core: {
+                options: {
+                map: true,
+                processors: [
+                    autoprefixer
+                ]
+                },
+                src: 'dist/css/*.css'
+            },
         },
         
         //Sass Configuration
@@ -70,7 +86,7 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt, { scope: 'devDependencies' });    
     
     // CSS distribution task.
-    grunt.registerTask('sass-compile', ['clean:dist', 'sass']);
+    grunt.registerTask('sass-compile', ['clean:dist', 'sass', 'postcss:core']);
     
     // Default task.
     grunt.registerTask('default', ['sass-compile','copy']);
