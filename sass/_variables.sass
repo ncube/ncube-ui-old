@@ -59,7 +59,7 @@ $color-primary:         $belize
 $color-success:         $lightGreen
 $color-info:            $river
 $color-warning:         $orange
-$color-danger:          $bloodOrange
+$color-error:          $bloodOrange
 
 
 // Options
@@ -74,6 +74,17 @@ $enable-transitions: false !default
 $enable-hover-media-query: false !default
 $enable-grid-classes: true !default
 
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+
+$spacer: 1rem !default
+$spacer-x: $spacer !default
+$spacer-y: $spacer !default
+$spacers: (0: (x: 0, y: 0), 1: (x: $spacer-x, y: $spacer-y), 2: (x: $spacer-x * 1.5, y: $spacer-y * 1.5), 3: (x: $spacer-x * 3, y: $spacer-y * 3)) !default
+
+$border-width: 1px !default
 
 //======== Scaffolding ========
 //=============================
@@ -102,7 +113,13 @@ $font-family-serif:       Georgia, "Times New Roman", Times, serif
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace
 $font-family-base:        $font-family-sans-serif
 
-$font-size-base:          14px
+// $font-size-base:          14px
+$font-size-root: 14px !default
+$font-size-base: 1rem !default
+$font-size-lg: 1.25rem !default
+$font-size-sm: 0.875rem !default
+$font-size-xs: 0.75rem !default
+
 $font-size-large:         ceil(($font-size-base * 1.25)) // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)) // ~12px
 
@@ -242,9 +259,9 @@ $state-warning-text:             #8a6d3b
 $state-warning-bg:               #fcf8e3
 $state-warning-border:           darken($state-warning-bg, 5%)
 
-$state-danger-text:              #a94442
-$state-danger-bg:                #f2dede
-$state-danger-border:            darken($state-danger-bg, 5%)
+$state-error-text:              #a94442
+$state-error-bg:                #f2dede
+$state-error-border:            darken($state-error-bg, 5%)
 
 
 
@@ -282,9 +299,9 @@ $panel-warning-text:          $state-warning-text
 $panel-warning-border:        $state-warning-border
 $panel-warning-heading-bg:    $state-warning-bg
 
-$panel-danger-text:           $state-danger-text
-$panel-danger-border:         $state-danger-border
-$panel-danger-heading-bg:     $state-danger-bg
+$panel-error-text:           $state-error-text
+$panel-error-border:         $state-error-border
+$panel-error-heading-bg:     $state-error-bg
 
 
 //== Thumbnails
@@ -414,6 +431,8 @@ $page-header-border-color:    $gray-lighter
 
 $hr-border:                   $gray-lighter
 
+$line-height: 1.5 !default
+
 //======== Layout ========
 //=============================
 
@@ -422,3 +441,147 @@ $side-header-width: 12%
 
 $page-fluid-width-full: 100%
 $page-fluid-width-half: 54%
+
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+$line-height-lg: 4 / 3 !default
+$line-height-sm: 1.5 !default
+
+$border-radius: 0.25rem !default
+$border-radius-lg: 0.3rem !default
+$border-radius-sm: 0.2rem !default
+
+// $component-active-color: #fff !default
+// $component-active-bg: $brand-primary !default
+
+$caret-width: 0.3em !default
+$caret-width-lg: $caret-width !default
+
+// Forms
+
+$input-padding-x: 1.2rem !default
+$input-padding-y: 0.375rem !default
+
+// $input-bg: #fff !default
+$input-bg: whitesmoke !default
+$input-bg-disabled: $gray-lighter !default
+
+$input-color: $gray !default
+$input-border-color: #ccc !default
+$input-btn-border-width: $border-width !default
+
+// For form controls and buttons
+$input-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075) !default
+
+$input-border-radius: $border-radius !default
+$input-border-radius-lg: $border-radius-lg !default
+$input-border-radius-sm: $border-radius-sm !default
+
+$input-border-focus: #66afe9 !default
+$input-box-shadow-focus: rgba(102, 175, 233, 0.6) !default
+
+$input-color-placeholder: #999 !default
+
+// $input-padding-x-sm: 0.75rem !default
+// $input-padding-y-sm: 0.275rem !default
+
+// $input-padding-x-lg: 1.25rem !default
+// $input-padding-y-lg: 0.75rem !default
+
+$input-padding-x-sm: 0.75rem !default
+$input-padding-y-sm: 0.275rem !default
+
+$input-padding-x-lg: 1.25rem !default
+$input-padding-y-lg: 0.75rem !default
+
+// $input-height: $font-size-base * $line-height + $input-padding-y * 2 !default
+$input-height: 30px !default
+$input-height-lg: $font-size-lg * $line-height-lg + $input-padding-y-lg * 2 !default
+$input-height-sm: $font-size-sm * $line-height-sm + $input-padding-y-sm * 2 !default
+
+$form-group-margin-bottom: $spacer-y !default
+
+$input-group-addon-bg: $gray-lighter !default
+$input-group-addon-border-color: $input-border-color !default
+
+$cursor-disabled: not-allowed !default
+
+$custom-control-gutter: 1.5rem !default
+$custom-control-spacer-x: 1rem !default
+$custom-control-spacer-y: 0.25rem !default
+
+$custom-control-indicator-size: 1rem !default
+$custom-control-indicator-bg: #ddd !default
+$custom-control-indicator-bg-size: 50% 50% !default
+$custom-control-indicator-box-shadow: inset 0 0.25rem 0.25rem rgba(0, 0, 0, 0.1) !default
+
+$custom-control-disabled-cursor: $cursor-disabled !default
+$custom-control-disabled-indicator-bg: #eee !default
+$custom-control-disabled-description-color: #767676 !default
+
+$custom-control-checked-indicator-color: #fff !default
+$custom-control-checked-indicator-bg: #0074d9 !default
+$custom-control-checked-indicator-box-shadow: none !default
+
+$custom-control-focus-indicator-box-shadow: 0 0 0 0.075rem #fff, 0 0 0 0.2rem #0074d9 !default
+
+$custom-control-active-indicator-color: #fff !default
+$custom-control-active-indicator-bg: #84c6ff !default
+$custom-control-active-indicator-box-shadow: none !default
+
+$custom-checkbox-radius: $border-radius !default
+$custom-checkbox-checked-icon: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTYuNCwxTDUuNywxLjdMMi45LDQuNUwyLjEsMy43TDEuNCwzTDAsNC40bDAuNywwLjdsMS41LDEuNWwwLjcsMC43bDAuNy0wLjdsMy41LTMuNWwwLjctMC43TDYuNCwxTDYuNCwxeiINCgkvPg0KPC9zdmc+DQo=" !default
+$custom-checkbox-indeterminate-bg: #0074d9 !default
+$custom-checkbox-indeterminate-icon: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iOHB4IiBoZWlnaHQ9IjhweCIgdmlld0JveD0iMCAwIDggOCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgOCA4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0wLDN2Mmg4VjNIMHoiLz4NCjwvc3ZnPg0K" !default
+$custom-checkbox-indeterminate-box-shadow: none !default
+
+$custom-radio-radius: 50% !default
+$custom-radio-checked-icon: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTQsMUMyLjMsMSwxLDIuMywxLDRzMS4zLDMsMywzczMtMS4zLDMtM1M1LjcsMSw0LDF6Ii8+DQo8L3N2Zz4NCg==" !default
+
+$custom-select-padding-x: 0.75rem !default
+$custom-select-padding-y: 0.375rem !default
+$custom-select-indicator-padding: 1rem !default
+
+// Extra padding to account for the presence of the background-image based indicator
+$custom-select-color: $input-color !default
+$custom-select-bg: #fff !default
+$custom-select-bg-size: 8px 10px !default
+
+// In pixels because image dimensions
+$custom-select-indicator: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAMAAACzvE1FAAAADFBMVEUzMzMzMzMzMzMzMzMKAG/3AAAAA3RSTlMAf4C/aSLHAAAAPElEQVR42q3NMQ4AIAgEQTn//2cLdRKppSGzBYwzVXvznNWs8C58CiussPJj8h6NwgorrKRdTvuV9v16Afn0AYFOB7aYAAAAAElFTkSuQmCC" !default
+$custom-select-border-width: $input-btn-border-width !default
+$custom-select-border-color: $input-border-color !default
+$custom-select-border-radius: $border-radius !default
+
+$custom-select-focus-border-color: #51a7e8 !default
+$custom-select-focus-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(81, 167, 232, 0.5) !default
+
+$custom-select-sm-padding-y: 0.2rem !default
+$custom-select-sm-font-size: 75% !default
+
+$custom-file-height: 2.5rem !default
+$custom-file-width: 14rem !default
+$custom-file-focus-box-shadow: 0 0 0 0.075rem #fff, 0 0 0 0.2rem #0074d9 !default
+
+$custom-file-padding-x: 0.5rem !default
+$custom-file-padding-y: 1rem !default
+$custom-file-line-height: 1.5 !default
+$custom-file-color: #555 !default
+$custom-file-bg: #fff !default
+$custom-file-border-width: $border-width !default
+$custom-file-border-color: #ddd !default
+$custom-file-border-radius: $border-radius !default
+$custom-file-box-shadow: inset 0 0.2rem 0.4rem rgba(0, 0, 0, 0.05) !default
+$custom-file-placeholder: "Choose file..." !default
+$custom-file-button-label: "Browse" !default
+$custom-file-button-color: $custom-file-color !default
+$custom-file-button-bg: #eee !default
+
+// Form validation icons
+$form-icon-success: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MTIgNzkyIj48cGF0aCBmaWxsPSIjNWNiODVjIiBkPSJNMjMzLjggNjEwYy0xMy4zIDAtMjYtNi0zNC0xNi44TDkwLjUgNDQ4LjhDNzYuMyA0MzAgODAgNDAzLjMgOTguOCAzODljMTguOC0xNC4yIDQ1LjUtMTAuNCA1OS44IDguNGw3MiA5NUw0NTEuMyAyNDJjMTIuNS0yMCAzOC44LTI2LjIgNTguOC0xMy43IDIwIDEyLjQgMjYgMzguNyAxMy43IDU4LjhMMjcwIDU5MGMtNy40IDEyLTIwLjIgMTkuNC0zNC4zIDIwaC0yeiIvPjwvc3ZnPg==" !default
+$form-icon-warning: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MTIgNzkyIj48cGF0aCBmaWxsPSIjZjBhZDRlIiBkPSJNNjAzIDY0MC4ybC0yNzguNS01MDljLTMuOC02LjYtMTAuOC0xMC42LTE4LjUtMTAuNnMtMTQuNyA0LTE4LjUgMTAuNkw5IDY0MC4yYy0zLjcgNi41LTMuNiAxNC40LjIgMjAuOCAzLjggNi41IDEwLjggMTAuNCAxOC4zIDEwLjRoNTU3YzcuNiAwIDE0LjYtNCAxOC40LTEwLjQgMy41LTYuNCAzLjYtMTQuNCAwLTIwLjh6bS0yNjYuNC0zMGgtNjEuMlY1NDloNjEuMnY2MS4yem0wLTEwN2gtNjEuMlYzMDRoNjEuMnYxOTl6Ii8+PC9zdmc+" !default
+$form-icon-error: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MTIgNzkyIj48cGF0aCBmaWxsPSIjZDk1MzRmIiBkPSJNNDQ3IDU0NC40Yy0xNC40IDE0LjQtMzcuNiAxNC40LTUyIDBsLTg5LTkyLjctODkgOTIuN2MtMTQuNSAxNC40LTM3LjcgMTQuNC01MiAwLTE0LjQtMTQuNC0xNC40LTM3LjYgMC01Mmw5Mi40LTk2LjMtOTIuNC05Ni4zYy0xNC40LTE0LjQtMTQuNC0zNy42IDAtNTJzMzcuNi0xNC4zIDUyIDBsODkgOTIuOCA4OS4yLTkyLjdjMTQuNC0xNC40IDM3LjYtMTQuNCA1MiAwIDE0LjMgMTQuNCAxNC4zIDM3LjYgMCA1MkwzNTQuNiAzOTZsOTIuNCA5Ni40YzE0LjQgMTQuNCAxNC40IDM3LjYgMCA1MnoiLz48L3N2Zz4=" !default
+$form-icon-select: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MHB4IiBoZWlnaHQ9IjQwcHgiPjxwYXRoICAgICBkPSJNIDM0LjMwNDEsMTcuMTc4MzIyIDIwLjgwODc0MSwzMC42NTU0NzkgcSAtMC4zNDU1NjksMC4zNDU1OCAtMC44MTg0NTEsMC4zNDU1OCAtMC40NzI4ODIsMCAtMC44MTg0NTEsLTAuMzQ1NTggTCA1LjY3NjQ4MDYsMTcuMTc4MzIyIFEgNS4zMzA5MTE3LDE2LjgzMjc0MSA1LjMzMDkxMTcsMTYuMzUwNzcgcSAwLC0wLjQ4MTk3MSAwLjM0NTU2ODksLTAuODI3NTUxIEwgOC42OTU2NTgzLDEyLjUyMjI0IHEgMC4zNDU1Njg5LC0wLjM0NTU4IDAuODE4NDUxMSwtMC4zNDU1OCAwLjQ3Mjg4MjIsMCAwLjgxODQ1MTYsMC4zNDU1OCBsIDkuNjU3NzI5LDkuNjU3NzQ0IDkuNjU3NzI5LC05LjY1Nzc0NCBxIDAuMzQ1NTY5LC0wLjM0NTU4IDAuODE4NDUxLC0wLjM0NTU4IDAuNDcyODgyLDAgMC44MTg0NTEsMC4zNDU1OCBsIDMuMDE5MTc5LDMuMDAwOTc5IHEgMC4zNDU1NjksMC4zNDU1OCAwLjM0NTU2OSwwLjgyNzU1MSAwLDAuNDgxOTcxIC0wLjM0NTU2OSwwLjgyNzU1MiB6Ii8+PC9zdmc+" !default
