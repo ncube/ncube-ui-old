@@ -392,22 +392,6 @@ $close-color:                 #000
 $close-text-shadow:           0 1px 0 #fff
 
 
-//== Code
-//
-//##
-
-$code-color:                  #c7254e
-$code-bg:                     #f9f2f4
-
-$kbd-color:                   #fff
-$kbd-bg:                      #333
-
-$pre-bg:                      #f5f5f5
-$pre-color:                   $gray-dark
-$pre-border-color:            #ccc
-$pre-scrollable-max-height:   340px
-
-
 //== Type
 //
 //##
@@ -433,6 +417,16 @@ $hr-border:                   $gray-lighter
 
 $line-height: 1.5 !default
 
+// Links
+//
+// Style anchor elements.
+
+$link-color: $color-primary !default
+$link-decoration: none !default
+$link-hover-color: darken($link-color, 15%) !default
+$link-hover-decoration: underline !default
+
+
 //======== Layout ========
 //=============================
 
@@ -455,7 +449,7 @@ $border-radius-lg: 0.3rem !default
 $border-radius-sm: 0.2rem !default
 
 // $component-active-color: #fff !default
-// $component-active-bg: $brand-primary !default
+// $component-active-bg: $color-primary !default
 
 $caret-width: 0.3em !default
 $caret-width-lg: $caret-width !default
@@ -585,3 +579,59 @@ $form-icon-success: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53M
 $form-icon-warning: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MTIgNzkyIj48cGF0aCBmaWxsPSIjZjBhZDRlIiBkPSJNNjAzIDY0MC4ybC0yNzguNS01MDljLTMuOC02LjYtMTAuOC0xMC42LTE4LjUtMTAuNnMtMTQuNyA0LTE4LjUgMTAuNkw5IDY0MC4yYy0zLjcgNi41LTMuNiAxNC40LjIgMjAuOCAzLjggNi41IDEwLjggMTAuNCAxOC4zIDEwLjRoNTU3YzcuNiAwIDE0LjYtNCAxOC40LTEwLjQgMy41LTYuNCAzLjYtMTQuNCAwLTIwLjh6bS0yNjYuNC0zMGgtNjEuMlY1NDloNjEuMnY2MS4yem0wLTEwN2gtNjEuMlYzMDRoNjEuMnYxOTl6Ii8+PC9zdmc+" !default
 $form-icon-error: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MTIgNzkyIj48cGF0aCBmaWxsPSIjZDk1MzRmIiBkPSJNNDQ3IDU0NC40Yy0xNC40IDE0LjQtMzcuNiAxNC40LTUyIDBsLTg5LTkyLjctODkgOTIuN2MtMTQuNSAxNC40LTM3LjcgMTQuNC01MiAwLTE0LjQtMTQuNC0xNC40LTM3LjYgMC01Mmw5Mi40LTk2LjMtOTIuNC05Ni4zYy0xNC40LTE0LjQtMTQuNC0zNy42IDAtNTJzMzcuNi0xNC4zIDUyIDBsODkgOTIuOCA4OS4yLTkyLjdjMTQuNC0xNC40IDM3LjYtMTQuNCA1MiAwIDE0LjMgMTQuNCAxNC4zIDM3LjYgMCA1MkwzNTQuNiAzOTZsOTIuNCA5Ni40YzE0LjQgMTQuNCAxNC40IDM3LjYgMCA1MnoiLz48L3N2Zz4=" !default
 $form-icon-select: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MHB4IiBoZWlnaHQ9IjQwcHgiPjxwYXRoICAgICBkPSJNIDM0LjMwNDEsMTcuMTc4MzIyIDIwLjgwODc0MSwzMC42NTU0NzkgcSAtMC4zNDU1NjksMC4zNDU1OCAtMC44MTg0NTEsMC4zNDU1OCAtMC40NzI4ODIsMCAtMC44MTg0NTEsLTAuMzQ1NTggTCA1LjY3NjQ4MDYsMTcuMTc4MzIyIFEgNS4zMzA5MTE3LDE2LjgzMjc0MSA1LjMzMDkxMTcsMTYuMzUwNzcgcSAwLC0wLjQ4MTk3MSAwLjM0NTU2ODksLTAuODI3NTUxIEwgOC42OTU2NTgzLDEyLjUyMjI0IHEgMC4zNDU1Njg5LC0wLjM0NTU4IDAuODE4NDUxMSwtMC4zNDU1OCAwLjQ3Mjg4MjIsMCAwLjgxODQ1MTYsMC4zNDU1OCBsIDkuNjU3NzI5LDkuNjU3NzQ0IDkuNjU3NzI5LC05LjY1Nzc0NCBxIDAuMzQ1NTY5LC0wLjM0NTU4IDAuODE4NDUxLC0wLjM0NTU4IDAuNDcyODgyLDAgMC44MTg0NTEsMC4zNDU1OCBsIDMuMDE5MTc5LDMuMDAwOTc5IHEgMC4zNDU1NjksMC4zNDU1OCAwLjM0NTU2OSwwLjgyNzU1MSAwLDAuNDgxOTcxIC0wLjM0NTU2OSwwLjgyNzU1MiB6Ii8+PC9zdmc+" !default
+
+
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background and border color.
+
+$btn-padding-x: 1rem !default
+$btn-padding-y: 0.375rem !default
+$btn-font-weight: normal !default
+$btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075) !default
+$btn-active-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !default
+
+$btn-primary-color: #fff !default
+$btn-primary-bg: $color-primary !default
+$btn-primary-border: $btn-primary-bg !default
+
+$btn-secondary-color: $gray-dark !default
+$btn-secondary-bg: #fff !default
+$btn-secondary-border: #ccc !default
+
+$btn-info-color: #fff !default
+$btn-info-bg: $color-info !default
+$btn-info-border: $btn-info-bg !default
+
+$btn-success-color: #fff !default
+$btn-success-bg: $color-success !default
+$btn-success-border: $btn-success-bg !default
+
+$btn-warning-color: #fff !default
+$btn-warning-bg: $color-warning !default
+$btn-warning-border: $btn-warning-bg !default
+
+$btn-error-color: #fff !default
+$btn-error-bg: $color-error !default
+$btn-error-border: $btn-error-bg !default
+
+$btn-link-disabled-color: $gray-light !default
+
+//Sizes
+$btn-padding-x-sm: 0.75rem !default
+$btn-padding-y-sm: 0.25rem !default
+
+$btn-padding-x-lg: 1.25rem !default
+$btn-padding-y-lg: 0.75rem !default
+
+$btn-block-spacing-y: 5px !default
+$btn-toolbar-margin: 5px !default
+
+$split-btn-dropdown-toggle-padding-x: 8px !default
+$split-btn-lg-dropdown-toggle-padding-x: 12px !default
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius: $border-radius !default
+$btn-border-radius-lg: $border-radius-lg !default
+$btn-border-radius-sm: $border-radius-sm !default

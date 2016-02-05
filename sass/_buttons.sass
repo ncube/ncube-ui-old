@@ -1,0 +1,126 @@
+//
+// Base styles
+//
+
+.btn
+  display: inline-block
+  font-weight: $btn-font-weight
+  text-align: center
+  white-space: nowrap
+  vertical-align: middle
+  cursor: pointer
+  user-select: none
+  border: $input-btn-border-width solid transparent
+  background: #e0e1e2 none
+  text-decoration: none
+  padding: 0.78em 1.5em 0.78em
+  line-height: 1em
+  border-radius: $btn-border-radius
+  font-size: 1.1rem
+
+  //   +button-size($btn-padding-y, $btn-padding-x, $font-size-base, $line-height, $btn-border-radius)
+
+  &.hover,
+  &:hover
+    background-color: $silver
+    background-image: none
+    
+  &.focus,
+  &:focus
+    background-color: $silver
+    background-image: '' !important
+    box-shadow: '' !important
+
+  &:active,
+  &.active
+    background-color: $grey
+    background-image: none
+    outline: 0
+
+    // box-shadow: $btn-active-box-shadow
+
+  &.disabled,
+  &:disabled
+    cursor: $cursor-disabled
+    opacity: .65
+    box-shadow: none
+
+//
+// Alternate buttons
+//
+
+.btn-primary
+  +button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border)
+
+.btn-secondary
+  +button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border)
+
+.btn-info
+  +button-variant($btn-info-color, $btn-info-bg, $btn-info-border)
+
+.btn-success
+  +button-variant($btn-success-color, $btn-success-bg, $btn-success-border)
+
+.btn-warning
+  +button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border)
+
+.btn-error
+  +button-variant($btn-error-color, $btn-error-bg, $btn-error-border)
+
+// Remove all backgrounds
+.btn-outline-primary
+  +button-outline-variant($btn-primary-bg)
+
+.btn-outline-secondary
+  +button-outline-variant($btn-secondary-border)
+
+.btn-outline-info
+  +button-outline-variant($btn-info-bg)
+
+.btn-outline-success
+  +button-outline-variant($btn-success-bg)
+
+.btn-outline-warning
+  +button-outline-variant($btn-warning-bg)
+
+.btn-outline-error
+  +button-outline-variant($btn-error-bg)
+
+//
+// Button Sizes
+//
+// TODO: Add Button mixins
+
+.btn-xlg
+  font-size: 1.71428571rem
+  // line-height: ensure even-numbered height of button next to large input
+  //   +button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg, $line-height-lg, $btn-border-radius-lg)
+
+.btn-lg
+  font-size: 1.42857143rem
+  // line-height: ensure even-numbered height of button next to large input
+  //   +button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg, $line-height-lg, $btn-border-radius-lg)
+
+.btn-sm
+  font-size: 0.92857143rem
+  // line-height: ensure proper height of button next to small input
+  // +button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm)
+
+//
+// Block button
+//
+
+.btn-block
+  display: block
+  width: 100%
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block
+  margin-top: $btn-block-spacing-y
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"]
+  &.btn-block
+    width: 100%
