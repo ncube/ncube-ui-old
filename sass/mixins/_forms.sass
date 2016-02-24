@@ -16,21 +16,24 @@
   &.radio-inline label,
   &.checkbox-inline label
     color: $color
+  
 
-  // Set the border and box shadow on specific inputs to match
-  .form-field
-    border-color: $color
+    // @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075)); // Redeclare so transitions work
 
     &:focus
-      border-color: darken($color, 10%)
-      $shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten($color, 20%)
-      box-shadow: $shadow
+      // border-color: darken($border-color, 10%);
+      // $shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten($border-color, 20%);
+      // @include box-shadow($shadow);
 
   // Set validation states also for addons
   .input-group-addon
     color: $color
     border-color: $color
     background-color: lighten($color, 40%)
+
+  // Optional feedback icon
+  .form-field-feedback
+    color: $color
 
 // Form control focus state
 //
@@ -46,13 +49,9 @@
 // contrast against a dark gray background.
 =form-field-focus
   &:focus
-    background-color: white
-    border-color: $input-border-focus
+    border: 3px solid whitesmoke
     outline: none
-
-    $shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $input-box-shadow-focus
-
-    box-shadow: $input-box-shadow
+    background-color: white
 
 // Form control sizing
 //
