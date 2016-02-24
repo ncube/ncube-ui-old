@@ -32,7 +32,7 @@ module.exports = function(grunt) {
         // To Watch files to compile
         watch: {
             sass: {
-                files: ['sass/*.sass', 'sass/mixins/*.sass'],
+                files: ['sass/*.sass', 'sass/mixins/*.sass', 'sass/utilities/*.sass', 'sass/components/*.sass'],
                 tasks: ['sass', 'postcss:core']
             }
         },
